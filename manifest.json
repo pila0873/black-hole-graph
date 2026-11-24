@@ -1,0 +1,10 @@
+{
+  "id": "black-hole-graph",
+  "name": "Black Hole Graph",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "A physically ray-traced black hole with your notes orbiting it, connected by their links.",
+  "author": "obsi",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

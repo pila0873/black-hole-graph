@@ -1,0 +1,30 @@
+{
+  "name": "black-hole-graph",
+  "version": "0.1.0",
+  "description": "A physically traced black hole with your Obsidian notes orbiting it.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "typecheck": "tsc -noEmit -skipLibCheck",
+    "preview:build": "esbuild dev/entry.ts --bundle --format=esm --outfile=dev/preview.js --loader:.glsl=text --sourcemap",
+    "preview": "esbuild dev/entry.ts --bundle --format=esm --outfile=dev/preview.js --loader:.glsl=text --sourcemap --watch",
+    "preview:serve": "node dev/server.mjs",
+    "smoke": "esbuild dev/smoke.ts --bundle --format=esm --outfile=dev/smoke.mjs --platform=node --log-level=warning && node dev/smoke.mjs"
+  },
+  "keywords": [
+    "obsidian",
+    "graph",
+    "blackhole"
+  ],
+  "author": "obsi",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "0.20.2",
+    "obsidian": "latest",
+    "tslib": "2.6.2",
+    "typescript": "5.4.5"
+  }
+}

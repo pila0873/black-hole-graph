@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Black Hole Graph — preview</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #03040a;
+        overflow: hidden;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      #stage {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+      }
+      canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      #notes {
+        pointer-events: none;
+      }
+      #hud {
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        z-index: 5;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 11px;
+        line-height: 1.5;
+        pointer-events: none;
+        user-select: none;
+      }
+      #hud b {
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stage">
+      <canvas id="gl"></canvas>
+      <canvas id="notes"></canvas>
+      <div id="hud">
+        <b>drag</b> orbit &nbsp; <b>wheel</b> zoom &nbsp; <b>click</b> note &nbsp; <b>F</b> fast mode &nbsp; <b>R</b> reset
+      </div>
+    </div>
+    <script>
+      // Optional fixed viewport for reproducible screenshots:
+      //   preview.html?size=1400x900&freeze=1&t=12&dist=22&el=14&az=0.45
+      (function () {
+        const q = new URLSearchParams(location.search);
+        const size = q.get('size');
+        if (!size) return;
+        const [w, h] = size.split('x').map(Number);
+        if (!w || !h) return;
+        const stage = document.getElementById('stage');
+        stage.style.width = w + 'px';
+        stage.style.height = h + 'px';
+        document.body.style.display = 'flex';
+        document.body.style.alignItems = 'center';
+        document.body.style.justifyContent = 'center';
+        document.body.style.background = '#000';
+      })();
+    </script>
+    <script type="module" src="./preview.js"></script>
+  </body>
+</html>

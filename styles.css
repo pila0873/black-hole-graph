@@ -1,0 +1,60 @@
+/* Black Hole Graph */
+
+.black-hole-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #03040a;
+  cursor: grab;
+  contain: strict;
+}
+
+.black-hole-view.is-dragging {
+  cursor: grabbing;
+}
+
+.black-hole-view.is-hovering-note {
+  cursor: pointer;
+}
+
+.black-hole-view .bh-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.black-hole-view .bh-gl {
+  z-index: 0;
+}
+
+.black-hole-view .bh-notes {
+  z-index: 1;
+}
+
+/* Full-bleed: this custom view does not need a header bar. */
+.workspace-leaf-content[data-type='black-hole-graph-view'] .view-header {
+  display: none;
+}
+
+.black-hole-view .bh-canvas {
+  transition: opacity 260ms ease;
+}
+
+.black-hole-view.bh-dim-on-blur.is-blurred .bh-canvas {
+  opacity: 0.5;
+}
+
+.black-hole-view .view-header {
+  display: none;
+}
+
+.bh-textarea {
+  width: 100%;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-smaller);
+}
