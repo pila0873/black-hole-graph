@@ -6,7 +6,7 @@ param(
 $ErrorActionPreference = 'Stop'
 
 $root = Split-Path -Parent $PSScriptRoot
-$target = Join-Path $Vault '.obsidian\plugins\black-hole-graph'
+$target = Join-Path $Vault '.obsidian\plugins\black-hole-graph-scientific'
 $files = @('main.js', 'manifest.json', 'styles.css')
 
 if (-not (Test-Path $Vault)) {

@@ -18,7 +18,7 @@ Obsidian-плагин, превращающий граф заметок в ко�
 2. Создайте папку:
 
    ```text
-   <Vault>/.obsidian/plugins/black-hole-graph/
+   <Vault>/.obsidian/plugins/black-hole-graph-scientific/
    ```
 
 3. Поместите туда эти три файла.
